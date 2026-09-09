@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin — DupeX</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="admin-body">
+<div class="topadmin">
+  <h1>ADMIN · DupeX</h1>
+  <a href="#">log out</a>
+</div>
+<main class="admin-shell">
+
+  <div class="admin-panel">
+    <h2>NEW MOD</h2>
+    <form>
+      <label>Mod name</label>
+      <input type="text" name="name" placeholder="e.g. StackTool" required>
+      <label>Tagline (one line under the name)</label>
+      <input type="text" name="tagline" placeholder="the stack tool you never knew you needed">
+      <label>Modloader</label>
+      <select name="modloader">
+        <option value="Fabric" selected>Fabric</option>
+        <option value="Forge">Forge</option>
+        <option value="NeoForge">NeoForge</option>
+        <option value="Quilt">Quilt</option>
+      </select>
+      <label>Icon</label>
+      <select name="icon">
+        <option value="dirt">Dirt</option><option value="diamond">Diamond</option><option value="netherite">Netherite</option><option value="gold">Gold</option><option value="redstone">Redstone</option><option value="emerald">Emerald</option>
+      </select>
+      <button class="btn" type="submit">Create mod</button>
+    </form>
+    <p class="small muted">after creating, you will see it below. upload its first build there.</p>
+  </div>
+
+  <div class="admin-panel">
+  <div class="topadmin" style="border:none; padding:0 0 10px 0;">
+    <h1 style="font-family:var(--pixel); font-size:13px; color:var(--grass-bright);">
+      DupeX
+      <span class="small muted" style="font-family:var(--sans);"> 1 build(s) · 0 downloads</span>
+    </h1>
+    <form onsubmit="return confirm('delete the whole mod and all its files?');">
+      <button class="btn btn-danger" style="padding:6px 12px; font-size:12px; margin:0;" type="submit">delete mod</button>
+    </form>
+  </div>
+
+  <h2>UPLOAD BUILD</h2>
+  <form>
+    <label>Mod file (.jar / .zip)</label>
+    <input type="file" name="modfile" accept=".jar,.zip" required>
+    <label>Version (e.g. 1.1.0)</label>
+    <input type="text" name="version" placeholder="1.1.0" required>
+    <label>Minecraft versions (comma separated)</label>
+    <input type="text" name="mc_versions" placeholder="1.20.1, 1.21" required>
+    <label>Changelog (one line per entry)</label>
+    <textarea name="changelog"></textarea>
+    <button class="btn" type="submit">Upload build</button>
+  </form>
+
+  <div style="height:18px;"></div>
+
+  <h2>BUILDS (1)</h2>
+  <div class="ver-card">
+            <span class="vtag">LATEST · v1.0.0</span>
+            <span class="vmeta">1.20.1 · 1.21 · dupex-1.0.0.jar · 1.4 MB</span>
+            <form onsubmit="return confirm('delete v1.0.0 and its file?');">
+              <input type="hidden" name="action" value="delete-build">
+              <button class="btn btn-danger" type="submit">delete</button>
+            </form>
+          </div>
+
+  <div style="height:18px;"></div>
+
+  <details>
+    <summary style="cursor:pointer; color:var(--muted); font-size:14px; margin-bottom:6px;">edit text, features, icon</summary>
+
+    <form>
+      <label>Display name</label>
+      <input type="text" name="name" value="DupeX">
+      <label>Tagline</label>
+      <input type="text" name="tagline" value="the one-key duplication mod you keep forgetting to uninstall">
+      <label>Modloader</label>
+      <select name="modloader">
+        <option selected>Fabric</option>
+      </select>
+      <label>Description</label>
+      <textarea name="description">DupeX lets you duplicate any stack of items with a single hotkey. Hold the key, every stack doubles. Works in singleplayer and on servers where you have operator permissions. Lightweight, zero bloat, no dependencies beyond Fabric API. Config file generates on first launch — rebind the key, enable or disable the whole mod, all in one json.</textarea>
+      <label>Features (one per line)</label>
+      <textarea name="features">One keybind, whole inventory doubles at once. No menus, no cooldown, no faffing around.
+Duplicates anything — items, blocks, shulker boxes, even stacks of enchanted gear.
+Client side only. Your server does not need the mod installed to work with it.
+Op-only on multiplayer so random friends cannot abuse it and roll the server back.
+Tiny code footprint. No config bloat, no phone-home calls, nothing weird in the jar.
+Rebind the dupe key, toggle the mod off entirely, or run it silent. Your call.</textarea>
+      <label>Icon</label>
+      <select name="icon">
+        <option selected>Diamond</option>
+      </select>
+      <button class="btn" type="submit">Save changes</button>
+    </form>
+  </details>
+
+  <p class="small muted" style="margin-top:10px;">
+    <a href="preview_dupex.html" target="_blank" rel="noopener">view mod page ↗</a>
+  </p>
+</div>
+
+  <div class="admin-panel">
+    <h2>SITE SETTINGS</h2>
+    <form>
+      <label>Site name (header brand)</label>
+      <input type="text" name="brand" value="DupeX">
+      <label>Site tagline</label>
+      <input type="text" name="tagline" value="tiny minecraft mods, hand built, no bloat">
+      <label>Discord link</label>
+      <input type="text" name="discord" value="https://discord.gg/yourlink">
+      <button class="btn btn-gold" type="submit">Save site settings</button>
+    </form>
+  </div>
+
+</main>
+</body>
+</html>

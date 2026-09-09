@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+
+Sitemap: https://git39057-sys.github.io/dupex/sitemap.xml
